@@ -600,33 +600,42 @@ p {
 
 /* ===== RESPONSIVE HEADER DESIGN ===== */
 /* Tablet View (768px - 1024px) */
-@media (max-width: 1024px) {
+/* Tablet & Small Desktop View (851px - 1200px) - Keep full header but more compact */
+@media (max-width: 1200px) {
     .header-container {
-        padding: 0 var(--spacing-md);
-        gap: var(--spacing-md);
+        padding: 0 var(--spacing-sm);
+        gap: var(--spacing-sm);
+        max-width: 100%;
     }
 
     .nav-list {
-        gap: var(--spacing-sm);
+        gap: 0.25rem;
     }
 
     .nav-link {
-        padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: var(--font-xs);
+        padding: var(--spacing-xs) 0.5rem;
+        font-size: 0.7rem;
     }
 
     .cta-button {
-        font-size: var(--font-xs);
-        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.7rem;
+        padding: var(--spacing-xs) 0.75rem;
+        min-width: unset;
     }
 
     .brand-name {
-        font-size: var(--font-lg);
+        font-size: var(--font-base);
+    }
+
+    .brand-logo {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-base);
     }
 }
 
-/* Tablet + Mobile View (max-width: 1024px) */
-@media (max-width: 1024px) {
+/* Tablet + Mobile View (max-width: 850px) - Switch to hamburger menu */
+@media (max-width: 850px) {
     .header-container {
         grid-template-columns: 1fr auto;
         padding: 0 var(--spacing-md);
@@ -1237,7 +1246,7 @@ p {
 /* ===== HOME 2 RESPONSIVE BREAKPOINTS ===== */
 
 /* Tablet View (768px - 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
     .hero-title-home2 {
         font-size: var(--font-4xl);
     }
@@ -3000,7 +3009,7 @@ section {
 }
 
 /* Dashboard Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
     .dashboard-layout {
         grid-template-columns: 1fr;
     }
@@ -5090,7 +5099,7 @@ p.text-light,
     display: inline-flex !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
     .action-buttons .mode-toggle {
         display: none !important;
     }
@@ -5124,7 +5133,7 @@ body.light-mode .mobile-menu-overlay {
 }
 
 /* Issue 23 + 29: Force responsive layouts where inline grid styles exist */
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
     .dashboard-layout {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
@@ -5572,7 +5581,7 @@ body.light-mode .audition-schedule-table td {
     color: #1f1f1f;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 850px) {
     .table-responsive {
         width: 100%;
         overflow-x: auto;
