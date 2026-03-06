@@ -24,6 +24,94 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Responsive Fix for Shows Page Sections */
+        @media (max-width: 1024px) {
+
+            .shows-grid,
+            .upcoming-shows,
+            .cast-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .shows-grid .show-card:nth-child(3),
+            .upcoming-shows .upcoming-card:nth-child(3),
+            .cast-grid .cast-card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            /* Highlights has 4 items, but user asked for 'last card'. 
+               If 3 across, 4th is offset. Let's force 2x2 or 3+1? 
+               Usually 'last card centered' when 3 across. Let's force 3 across and span the 4th. */
+            /* Actually, repeat(3, 1fr) looks better if possible. */
+        }
+
+        /* Adjustments for highlights at 1024px specifically if we want 4th centered under 3 */
+        @media (min-width: 1025px) {
+            .highlights-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                /* If it's 2x2, all are centered. If it's 3 items across, 4th is alone.
+                   Let's check what the user expects. "last card in center" usually implies a 3-item grid or 
+                   the surplus items on the next row are centered.
+                   Let's assume they want a 3-column layout where the 4th spans.
+                */
+            }
+        }
+
+        /* Since user mentioned last card centered for all these, let's stick to the 2-column + 1-centered-last-row pattern. */
+        @media (max-width: 1024px) and (min-width: 769px) {
+
+            .shows-grid,
+            .upcoming-shows,
+            .cast-grid,
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .shows-grid .show-card:nth-child(3),
+            .upcoming-shows .upcoming-card:nth-child(3),
+            .cast-grid .cast-card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+                max-width: 450px;
+            }
+
+            /* For highlights grid with 4 items: if it's 2-column, it's 2x2. All filled.
+               If user wants 'last card centered', maybe they see 3 columns still? 
+               But 3 items of 250px fit at 1024px only if gap/padding is small.
+            */
+        }
+
+        @media (max-width: 768px) {
+
+            .shows-grid,
+            .upcoming-shows,
+            .highlights-grid,
+            .cast-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .shows-grid .show-card:nth-child(3),
+            .upcoming-shows .upcoming-card:nth-child(3),
+            .cast-grid .cast-card:nth-child(3) {
+                grid-column: span 1;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body class="shows-page">

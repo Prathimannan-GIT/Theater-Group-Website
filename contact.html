@@ -24,6 +24,38 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Responsive Fix for Contact Page Sections */
+        @media (max-width: 1024px) {
+
+            .contact-grid,
+            .hours-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .contact-grid .contact-card:nth-child(3),
+            .hours-grid .hours-card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .contact-grid,
+            .hours-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .contact-grid .contact-card:nth-child(3),
+            .hours-grid .hours-card:nth-child(3) {
+                grid-column: span 1;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body class="contact-page">

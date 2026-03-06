@@ -24,6 +24,68 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Responsive Fix for Home Page Sections */
+        @media (max-width: 1024px) {
+
+            .shows-grid,
+            .testimonials-grid,
+            .virtual-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .shows-grid .show-card:nth-child(3),
+            .testimonials-grid .testimonial-card:nth-child(3),
+            .virtual-grid .virtual-card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .shows-grid,
+            .testimonials-grid,
+            .virtual-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .shows-grid .show-card:nth-child(3),
+            .testimonials-grid .testimonial-card:nth-child(3),
+            .virtual-grid .virtual-card:nth-child(3) {
+                grid-column: span 1;
+                max-width: 100%;
+            }
+        }
+
+        /* Season Calendar Centering */
+        .season-card {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        .season-header {
+            flex-direction: column !important;
+            text-align: center !important;
+            justify-content: center !important;
+        }
+
+        .season-shows {
+            display: inline-block !important;
+            text-align: left !important;
+            margin: 0 auto !important;
+        }
+
+        .season-shows li {
+            justify-content: flex-start !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -473,7 +535,7 @@
                                 <i class="fas fa-snowflake"></i>
                             </div>
                             <div>
-                                <h3 class="text-gold" style="margin-bottom: 0.25rem; font-size: 1.8rem;">Winter Season
+                                <h3 class="text-gold" style="margin-bottom: 0.25rem; font-size: 1.8rem;">Winter
                                 </h3>
                                 <p class="text-gray" style="font-size: 1rem;">January - March</p>
                             </div>
@@ -482,7 +544,7 @@
                             <li class="text-light"
                                 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
                                 <i class="fas fa-ticket-alt" style="color: var(--accent-gold); font-size: 0.9rem;"></i>
-                                The Phantom Returns
+                                The Phantom
                             </li>
                             <li class="text-light"
                                 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
@@ -492,7 +554,7 @@
                             <li class="text-light"
                                 style="display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
                                 <i class="fas fa-ticket-alt" style="color: var(--accent-gold); font-size: 0.9rem;"></i>
-                                Classic Drama Festival
+                                Classic Drama
                             </li>
                         </ul>
                     </div>
@@ -506,7 +568,7 @@
                                 <i class="fas fa-sun"></i>
                             </div>
                             <div>
-                                <h3 class="text-gold" style="margin-bottom: 0.25rem; font-size: 1.8rem;">Summer Season
+                                <h3 class="text-gold" style="margin-bottom: 0.25rem; font-size: 1.8rem;">Summer
                                 </h3>
                                 <p class="text-gray" style="font-size: 1rem;">April - June</p>
                             </div>
@@ -515,7 +577,7 @@
                             <li class="text-light"
                                 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
                                 <i class="fas fa-ticket-alt" style="color: var(--accent-gold); font-size: 0.9rem;"></i>
-                                Shakespeare in the Park
+                                Shakespeare in Park
                             </li>
                             <li class="text-light"
                                 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
@@ -525,7 +587,7 @@
                             <li class="text-light"
                                 style="display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
                                 <i class="fas fa-ticket-alt" style="color: var(--accent-gold); font-size: 0.9rem;"></i>
-                                Summer Comedy Fest
+                                Summer Fest
                             </li>
                         </ul>
                     </div>
@@ -548,12 +610,12 @@
                             <li class="text-light"
                                 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
                                 <i class="fas fa-ticket-alt" style="color: var(--accent-gold); font-size: 0.9rem;"></i>
-                                The Enchanted Forest
+                                The Enchanted
                             </li>
                             <li class="text-light"
                                 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">
                                 <i class="fas fa-ticket-alt" style="color: var(--accent-gold); font-size: 0.9rem;"></i>
-                                Mystery Theater Night
+                                Mystery Night
                             </li>
                             <li class="text-light"
                                 style="display: flex; align-items: center; gap: 1rem; font-size: 1.1rem;">

@@ -24,6 +24,38 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Responsive Fix for Home 2 Page Sections */
+        @media (max-width: 1024px) {
+
+            .experience-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .experience-grid .experience-card:nth-child(3),
+            .testimonials-grid .testimonial-card:nth-child(3) {
+                grid-column: span 2;
+                justify-self: center;
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .experience-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .experience-grid .experience-card:nth-child(3),
+            .testimonials-grid .testimonial-card:nth-child(3) {
+                grid-column: span 1;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -50,7 +82,7 @@
                     <li class="nav-item">
                         <a href="shows.html" class="nav-link">Shows</a>
                     </li>
-                   
+
                     <li class="nav-item">
                         <a href="tickets.html" class="nav-link">Tickets</a>
                     </li>
